@@ -1,8 +1,12 @@
-Thank you for using our template!
+# INFORMAÇÕES ÚTEIS
 
-For more awesome templates please visit https://colorlib.com/wp/templates/
+## PALETA DE CORES
+- Roxo escuro: #3B305C
+- Roxo claro: #8E72DB
+- Roxo médio: #6D58A8
+- Cinza claro: #D4C9F5
+- Cinza escuro: #504B5C
+- Preto: #000000
+- Branco: #ffffff
 
-Copyright information for the template can't be altered/removed unless you purchase a license.
-More information about the license is available here: https://colorlib.com/wp/licence/
-
-Removing copyright information without the license will result in suspension of your hosting and/or domain name(s).
+![foto paleta]('./paleta_cores.png')
