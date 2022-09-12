@@ -1,486 +1,816 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>romofyi</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-      </div>
-      <!-- end loader -->
-      <!-- header -->
-      <header>
-         <!-- header inner -->
-         <div class="header">
-            <div class="header_top d_none1">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-4">
-                        <ul class="conta_icon ">
-                           <li><a href="#"><img src="images/call.png" alt="#"/>Call us: 0126 - 922 - 0162</a> </li>
-                        </ul>
-                     </div>
-                     <div class="col-md-4">
-                        <ul class="social_icon">
-                           <li> <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
-                              </a>
-                           </li>
-                           <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                           <li> <a href="#"> <i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                           <li> <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="se_fonr1">
-                           <form action="#" >
-                              <div class="select-box">
-                                 <label for="select-box1" class="label select-box1"><span class="label-desc">English</span> </label>
-                                 <select id="select-box1" class="select">
-                                    <option value="Choice 1">English</option>
-                                    <option value="Choice 1">Falkla</option>
-                                    <option value="Choice 2">Germa</option>
-                                    <option value="Choice 3">Neverl</option>
-                                 </select>
-                              </div>
-                           </form>
-                           <span class="time_o"> Open hour: 8.00 - 18.00</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="header_midil">
-               <div class="container">
-                  <div class="row d_flex">
-                     <div class="col-md-4">
-                        <ul class="conta_icon d_none1">
-                           <li><a href="#"><img src="images/email.png" alt="#"/> demo@gmail.com</a> </li>
-                        </ul>
-                     </div>
-                     <div class="col-md-4">
-                        <a class="logo" href="#"><img src="images/logo.png" alt="#"/></a>
-                     </div>
-                     <div class="col-md-4">
-                        <ul class="right_icon d_none1">
-                           <li><a href="#"><img src="images/shopping.png" alt="#"/></a> </li>
-                           <a href="#" class="order">Order Now</a> 
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="header_bottom">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                        <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                           <span class="navbar-toggler-icon"></span>
-                           </button>
-                           <div class="collapse navbar-collapse" id="navbarsExample04">
-                              <ul class="navbar-nav mr-auto">
-                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.html">About</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="products.html">Products</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="fashion.html">Fashion</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="news.html">News</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact Us</a>
-                                 </li>
-                              </ul>
-                           </div>
-                        </nav>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="search">
-                           <form action="/action_page.php">
-                              <input class="form_sea" type="text" placeholder="Search" name="search">
-                              <button type="submit" class="seach_icon"><i class="fa fa-search"></i></button>
-                           </form>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </header>
-      <!-- end header inner -->
-      <!-- end header -->
-      <!-- banner -->
-      <section class="banner_main">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-8">
-                  <div class="text-bg">
-                     <h1> <span class="blodark"> Romofyi </span> <br>Trands 2019</h1>
-                     <p>A huge fashion collection for ever </p>
-                     <a class="read_more" href="#">Shop now</a>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="ban_img">
-                     <figure><img src="images/ban_img.png" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- end banner -->
-      <!-- six_box section -->
-      <div class="six_box">
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx yellow_bg">
-                     <i><img src="images/shoes.png" alt="#"/></i>
-                     <span>Shoes</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx bluedark_bg">
-                     <i><img src="images/underwear.png" alt="#"/></i>
-                     <span>underwear</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx yellow_bg">
-                     <i><img src="images/pent.png" alt="#"/></i>
-                     <span>Pante & socks</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx bluedark_bg">
-                     <i><img src="images/t_shart.png" alt="#"/></i>
-                     <span>T-shirt & tankstop</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx yellow_bg">
-                     <i><img src="images/jakit.png" alt="#"/></i>
-                     <span>cardigans & jumpers</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx bluedark_bg">
-                     <i><img src="images/helbet.png" alt="#"/></i>
-                     <span>Top & hat</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end six_box section -->
-      <!-- project section -->
-      <div id="project" class="project">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Featured Products</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-            <div class="product_main">
-             
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/shoes1.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-            
-             
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/shoes2.png" alt="#"/></div>
-                     <h3 >Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/shoes3.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/shoes4.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/shoes5.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-            
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/tisat1.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/tisat2.png" alt="#"/></div>
-                     <h3 >Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/tisat3.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/tisat4.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/tisat5.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-            
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/mix1.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/mix2.png" alt="#"/></div>
-                     <h3 >Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/mix3.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/mix4.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/mix5.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-               <div class="col-md-12">
-                  <a class="read_more" href="#">See More</a>
-               </div>
-            </div>
-            </div>
-         </div>
-      </div>
-      <!-- end project section -->
-      <!-- fashion section -->
-      <div class="fashion">
-         <img src="images/fashion.jpg" alt="#"/>
-      </div>
-      <!-- end fashion section -->
-      <!-- news section -->
-      <div class="news">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Letest News</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-12 margin_top40">
-                  <div class="row d_flex">
-                     <div class="col-md-5">
-                        <div class="news_img">
-                           <figure><img src="images/news_img1.jpg"></figure>
-                        </div>
-                     </div>
-                     <div class="col-md-7">
-                        <div class="news_text">
-                           <h3>Specimen book. It has survived not only five</h3>
-                           <span>7 July 2019</span> 
-                           <div class="date_like">
-                              <span>Like </span><span class="pad_le">Comment</span>
-                           </div>
-                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-12 margin_top40">
-                  <div class="row d_flex">
-                     <div class="col-md-5">
-                        <div class="news_img">
-                           <figure><img src="images/news_img2.jpg"></figure>
-                        </div>
-                     </div>
-                     <div class="col-md-7">
-                        <div class="news_text">
-                           <h3>Specimen book. It has survived not only five</h3>
-                           <span>7 July 2019</span> 
-                           <div class="date_like">
-                              <span>Like </span><span class="pad_le">Comment</span>
-                           </div>
-                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-12 margin_top40">
-                  <div class="row d_flex">
-                     <div class="col-md-5">
-                        <div class="news_img">
-                           <figure><img src="images/news_img3.jpg"></figure>
-                        </div>
-                     </div>
-                     <div class="col-md-7">
-                        <div class="news_text">
-                           <h3>Specimen book. It has survived not only five</h3>
-                           <span>7 July 2019</span> 
-                           <div class="date_like">
-                              <span>Like </span><span class="pad_le">Comment</span>
-                           </div>
-                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end news section -->
-      <!-- newslatter section -->
-      <div  class="newslatter">
-         <div class="container">
-            <div class="row d_flex">
-               <div class="col-md-5">
-                  <h3 class="neslatter">Subscribe To The Newsletter</h3>
-               </div>
-               <div class="col-md-7">
-                  <form class="news_form">
-                     <input class="letter_form" placeholder=" Enter your email" type="text" name="Enter your email">
-                     <button class="sumbit">Subscribe</button>
-                  </form>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end newslatter section -->
-      <!-- three_box section -->
-      <div class="three_box">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-4">
-                  <div class="gift_box">
-                     <i><img src="images/icon_mony.png"></i>
-                     <span>Money Back</span>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="gift_box">
-                     <i><img src="images/icon_gift.png"></i>
-                     <span>Special Gift</span>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="gift_box">
-                     <i><img src="images/icon_car.png"></i>
-                     <span>Free Shipping</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end three_box section -->
+<html lang="zxx">
 
-      <!--  footer -->
-      <footer>
-         <div class="footer">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashi Template">
+    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fashi | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="header-top">
             <div class="container">
-               <div class="row">
-                  <div class="col-md-3">
-                     <div class="inror_box">
-                        <h3>INFORMATION </h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                     </div>
-                  </div>
-                  <div class="col-md-3">
-                     <div class="inror_box">
-                        <h3>MY ACCOUNT </h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                     </div>
-                  </div>
-                  <div class="col-md-3">
-                     <div class="inror_box">
-                        <h3>ABOUT  </h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                     </div>
-                  </div>
-                  <div class="col-md-3">
-                     <div class="inror_box">
-                        <h3>CONTACTS  </h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                     </div>
-                  </div>
-               </div>
+                <div class="ht-left">
+                    <div class="mail-service">
+                        <i class=" fa fa-envelope"></i>
+                        hello.colorlib@gmail.com
+                    </div>
+                    <div class="phone-service">
+                        <i class=" fa fa-phone"></i>
+                        +65 11.188.888
+                    </div>
+                </div>
+                <div class="ht-right">
+                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <div class="lan-selector">
+                        <select class="language_drop" name="countries" id="countries" style="width:300px;">
+                            <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
+                                data-title="English">English</option>
+                            <option value='yu' data-image="img/flag-2.jpg" data-imagecss="flag yu"
+                                data-title="Bangladesh">German </option>
+                        </select>
+                    </div>
+                    <div class="top-social">
+                        <a href="#"><i class="ti-facebook"></i></a>
+                        <a href="#"><i class="ti-twitter-alt"></i></a>
+                        <a href="#"><i class="ti-linkedin"></i></a>
+                        <a href="#"><i class="ti-pinterest"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
-                     </div>
-                  </div>
-               </div>
+        </div>
+        <div class="container">
+            <div class="inner-header">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="advanced-search">
+                            <button type="button" class="category-btn">All Categories</button>
+                            <div class="input-group">
+                                <input type="text" placeholder="What do you need?">
+                                <button type="button"><i class="ti-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-right col-md-3">
+                        <ul class="nav-right">
+                            <li class="heart-icon">
+                                <a href="#">
+                                    <i class="icon_heart_alt"></i>
+                                    <span>1</span>
+                                </a>
+                            </li>
+                            <li class="cart-icon">
+                                <a href="#">
+                                    <i class="icon_bag_alt"></i>
+                                    <span>3</span>
+                                </a>
+                                <div class="cart-hover">
+                                    <div class="select-items">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                                    <td class="si-text">
+                                                        <div class="product-selected">
+                                                            <p>$60.00 x 1</p>
+                                                            <h6>Kabino Bedside Table</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="si-close">
+                                                        <i class="ti-close"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                    <td class="si-text">
+                                                        <div class="product-selected">
+                                                            <p>$60.00 x 1</p>
+                                                            <h6>Kabino Bedside Table</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="si-close">
+                                                        <i class="ti-close"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="select-total">
+                                        <span>total:</span>
+                                        <h5>$120.00</h5>
+                                    </div>
+                                    <div class="select-button">
+                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cart-price">$150.00</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-         </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
-</html>
+        </div>
+        <div class="nav-item">
+            <div class="container">
+                <div class="nav-depart">
+                    <div class="depart-btn">
+                        <i class="ti-menu"></i>
+                        <span>All departments</span>
+                        <ul class="depart-hover">
+                            <li class="active"><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Underwear</a></li>
+                            <li><a href="#">Kid's Clothing</a></li>
+                            <li><a href="#">Brand Fashion</a></li>
+                            <li><a href="#">Accessories/Shoes</a></li>
+                            <li><a href="#">Luxury Brands</a></li>
+                            <li><a href="#">Brand Outdoor Apparel</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="nav-menu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="./index.html">Home</a></li>
+                        <li><a href="./shop.html">Shop</a></li>
+                        <li><a href="#">Collection</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Men's</a></li>
+                                <li><a href="#">Women's</a></li>
+                                <li><a href="#">Kid's</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./blog.html">Blog</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a href="./blog-details.html">Blog Details</a></li>
+                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                <li><a href="./check-out.html">Checkout</a></li>
+                                <li><a href="./faq.html">Faq</a></li>
+                                <li><a href="./register.html">Register</a></li>
+                                <li><a href="./login.html">Login</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
 
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="hero-items owl-carousel">
+            <div class="single-hero-items set-bg" data-setbg="img/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Bag,kids</span>
+                            <h1>Black friday</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore</p>
+                            <a href="#" class="primary-btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Sale <span>50%</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-items set-bg" data-setbg="img/hero-2.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Bag,kids</span>
+                            <h1>Black friday</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore</p>
+                            <a href="#" class="primary-btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Sale <span>50%</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-1.jpg" alt="">
+                        <div class="inner-text">
+                            <h4>Men’s</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-2.jpg" alt="">
+                        <div class="inner-text">
+                            <h4>Women’s</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-3.jpg" alt="">
+                        <div class="inner-text">
+                            <h4>Kid’s</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+    <!-- Women Banner Section Begin -->
+    <section class="women-banner spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
+                        <h2>Women’s</h2>
+                        <a href="#">Discover More</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 offset-lg-1">
+                    <div class="filter-control">
+                        <ul>
+                            <li class="active">Clothings</li>
+                            <li>HandBag</li>
+                            <li>Shoes</li>
+                            <li>Accessories</li>
+                        </ul>
+                    </div>
+                    <div class="product-slider owl-carousel">
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="img/products/women-1.jpg" alt="">
+                                <div class="sale">Sale</div>
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Coat</div>
+                                <a href="#">
+                                    <h5>Pure Pineapple</h5>
+                                </a>
+                                <div class="product-price">
+                                    $14.00
+                                    <span>$35.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="img/products/women-2.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Shoes</div>
+                                <a href="#">
+                                    <h5>Guangzhou sweater</h5>
+                                </a>
+                                <div class="product-price">
+                                    $13.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="img/products/women-3.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Towel</div>
+                                <a href="#">
+                                    <h5>Pure Pineapple</h5>
+                                </a>
+                                <div class="product-price">
+                                    $34.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="img/products/women-4.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Towel</div>
+                                <a href="#">
+                                    <h5>Converse Shoes</h5>
+                                </a>
+                                <div class="product-price">
+                                    $34.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Women Banner Section End -->
+
+    <!-- Deal Of The Week Section Begin-->
+    <section class="deal-of-week set-bg spad" data-setbg="img/time-bg.jpg">
+        <div class="container">
+            <div class="col-lg-6 text-center">
+                <div class="section-title">
+                    <h2>Deal Of The Week</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
+                        consectetur adipisicing elit </p>
+                    <div class="product-price">
+                        $35.00
+                        <span>/ HanBag</span>
+                    </div>
+                </div>
+                <div class="countdown-timer" id="countdown">
+                    <div class="cd-item">
+                        <span>56</span>
+                        <p>Days</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>12</span>
+                        <p>Hrs</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>40</span>
+                        <p>Mins</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>52</span>
+                        <p>Secs</p>
+                    </div>
+                </div>
+                <a href="#" class="primary-btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- Deal Of The Week Section End -->
+
+    <!-- Man Banner Section Begin -->
+    <section class="man-banner spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="filter-control">
+                        <ul>
+                            <li class="active">Clothings</li>
+                            <li>HandBag</li>
+                            <li>Shoes</li>
+                            <li>Accessories</li>
+                        </ul>
+                    </div>
+                    <div class="product-slider owl-carousel">
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="img/products/man-1.jpg" alt="">
+                                <div class="sale">Sale</div>
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Coat</div>
+                                <a href="#">
+                                    <h5>Pure Pineapple</h5>
+                                </a>
+                                <div class="product-price">
+                                    $14.00
+                                    <span>$35.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="img/products/man-2.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Shoes</div>
+                                <a href="#">
+                                    <h5>Guangzhou sweater</h5>
+                                </a>
+                                <div class="product-price">
+                                    $13.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="img/products/man-3.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Towel</div>
+                                <a href="#">
+                                    <h5>Pure Pineapple</h5>
+                                </a>
+                                <div class="product-price">
+                                    $34.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="img/products/man-4.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Towel</div>
+                                <a href="#">
+                                    <h5>Converse Shoes</h5>
+                                </a>
+                                <div class="product-price">
+                                    $34.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="product-large set-bg m-large" data-setbg="img/products/man-large.jpg">
+                        <h2>Men’s</h2>
+                        <a href="#">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Man Banner Section End -->
+
+    <!-- Instagram Section Begin -->
+    <div class="instagram-photo">
+        <div class="insta-item set-bg" data-setbg="img/insta-1.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-2.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-3.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-4.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-5.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-6.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+    </div>
+    <!-- Instagram Section End -->
+
+    <!-- Latest Blog Section Begin -->
+    <section class="latest-blog spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>From The Blog</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-blog">
+                        <img src="img/latest-1.jpg" alt="">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    May 4,2019
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h4>The Best Street Style From London Fashion Week</h4>
+                            </a>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-blog">
+                        <img src="img/latest-2.jpg" alt="">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    May 4,2019
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h4>Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h4>
+                            </a>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-blog">
+                        <img src="img/latest-3.jpg" alt="">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    May 4,2019
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h4>How To Brighten Your Wardrobe With A Dash Of Lime</h4>
+                            </a>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="benefit-items">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="img/icon-1.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Free Shipping</h6>
+                                <p>For all order over 99$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="img/icon-2.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Delivery On Time</h6>
+                                <p>If good have prolems</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="img/icon-1.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Secure Payment</h6>
+                                <p>100% secure payment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Blog Section End -->
+
+    <!-- Partner Logo Section Begin -->
+    <div class="partner-logo">
+        <div class="container">
+            <div class="logo-carousel owl-carousel">
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/logo-carousel/logo-1.png" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/logo-carousel/logo-2.png" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/logo-carousel/logo-3.png" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/logo-carousel/logo-4.png" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/logo-carousel/logo-5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partner Logo Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 60-49 Road 11378 New York</li>
+                            <li>Phone: +65 11.188.888</li>
+                            <li>Email: hello.colorlib@gmail.com</li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5>Information</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Serivius</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <h5>My Account</h5>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Shopping Cart</a></li>
+                            <li><a href="#">Shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="newslatter-item">
+                        <h5>Join Our Newsletter Now</h5>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#" class="subscribe-form">
+                            <input type="text" placeholder="Enter Your Mail">
+                            <button type="button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-reserved">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-text">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                        <div class="payment-pic">
+                            <img src="img/payment-method.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/jquery.dd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
