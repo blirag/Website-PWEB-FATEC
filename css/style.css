@@ -416,8 +416,12 @@ ol {
 	padding: 39px 0;
 }
 
+.inner-header .align-row {
+	align-items: center;
+}
+
 .inner-header .logo {
-	padding: 12px 0;
+	width: 200px;
 }
 
 .inner-header .logo a {
@@ -1042,7 +1046,7 @@ ol {
 
 .single-banner .category-bg {
 	height: 217px;
-	width: 383px;
+	width: 100%;
 	background: #3b305c;
 }
 
