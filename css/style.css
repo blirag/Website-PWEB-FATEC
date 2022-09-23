@@ -1040,6 +1040,12 @@ ol {
 	min-width: 100%;
 }
 
+.single-banner .category-bg {
+	height: 217px;
+	width: 383px;
+	background: #3b305c;
+}
+
 .single-banner .inner-text {
 	position: absolute;
 	left: 0;
@@ -4022,6 +4028,11 @@ ol {
 	}
 	.single-banner {
 		margin-bottom: 30px;
+	}
+	.single-banner .category-bg {
+		height: 217px;
+		width: 100%;
+		background: #3b305c;
 	}
 	.women-banner {
 		padding-right: 0;
