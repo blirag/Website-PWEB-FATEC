@@ -1206,10 +1206,13 @@ ol {
 .product-item .pi-pic {
 	overflow: hidden;
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
 
 .product-item .pi-pic img {
-	min-width: 100%;
+	width: 270px;
+	height: 270px;
 }
 
 .product-item .pi-pic .sale {
