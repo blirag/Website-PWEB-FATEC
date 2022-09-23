@@ -3988,6 +3988,11 @@ ol {
 	}
 }
 
+.container-header {
+		max-height: 178px;
+		background-image: url('../img/produtos-geeks.gif');
+}
+
 /* Medium Device: 1200px */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
