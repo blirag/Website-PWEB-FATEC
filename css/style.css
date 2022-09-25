@@ -504,7 +504,7 @@ ol {
 }
 
 .inner-header .nav-right li.heart-icon a {
-	color: #504b5c;
+	color: #ffffff;
 	position: relative;
 	display: inline-block;
 }
@@ -535,7 +535,7 @@ ol {
 }
 
 .inner-header .nav-right li.cart-icon a {
-	color: #504b5c;
+	color: #ffffff;
 	position: relative;
 	display: inline-block;
 }
@@ -688,7 +688,7 @@ ol {
 .inner-header .nav-right li.cart-price {
 	font-size: 18px;
 	font-weight: 700;
-	color: #504b5c;
+	color: #ffffff;
 }
 
 .nav-item {
@@ -1534,17 +1534,22 @@ ol {
 
 .logo-carousel .logo-item {
 	display: table;
+	display: inline-flex;
+	align-items: center;
 }
 
 .logo-carousel .logo-item .tablecell-inner {
-	display: table-cell;
-	height: 45px;
-	vertical-align: middle;
+	display: flex;
+	height: 100px;
+	align-items: center;
+	
 }
 
 .owl-carousel .owl-item img {
-	display: block;
+	display: inline-flex;
+	align-items: center;
 	width: auto;
+
 }
 
 /*---------------------
