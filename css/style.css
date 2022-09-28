@@ -1542,14 +1542,12 @@ ol {
 	display: flex;
 	height: 100px;
 	align-items: center;
-	
 }
 
 .owl-carousel .owl-item img {
 	display: inline-flex;
 	align-items: center;
 	width: auto;
-
 }
 
 /*---------------------
@@ -3973,6 +3971,10 @@ ol {
 	color: #6b6b6b;
 }
 
+.nav-right {
+	position: relative;
+}
+
 /* ------------------------------ Responsive Media Styles ---------------------------- */
 
 @media only screen and (min-width: 1200px) and (max-width: 1920px) {
@@ -3994,8 +3996,8 @@ ol {
 }
 
 .container-header {
-		max-height: 178px;
-		background-image: url('../img/produtos-geeks.gif');
+	max-height: 178px;
+	background-image: url('../img/produtos-geeks.gif');
 }
 
 /* Medium Device: 1200px */
@@ -4170,6 +4172,13 @@ ol {
 		float: none;
 		text-align: center;
 	}
+	.header-section {
+		display: flex;
+		flex-direction: column;
+	}
+	.header-top {
+		order: 1;
+	}
 	.header-top .ht-left,
 	.header-top .top-social {
 		display: none;
@@ -4204,16 +4213,33 @@ ol {
 		padding: 14px 50px 14px 18px;
 	}
 	.nav-item {
-		background: transparent;
+		background: #8e72db;
+		order: 2;
 	}
 	.nav-item .nav-menu {
 		display: none;
+	}
+	.container-header {
+		order: 3;
+	}
+	.logo-container {
+		display: none;
+	}
+	.nav-right-container {
+		order: 1;
+	}
+	.advanced-search-container {
+		order: 2;
+		padding: 0;
+	}
+	.inner-header .advanced-search .input-group button {
+		right: 0;
 	}
 	.slicknav_menu {
 		display: block;
 		background: transparent;
 		text-align: center;
-		margin-top: -48px;
+		margin-top: 0;
 	}
 	.slicknav_nav {
 		background: #333;
