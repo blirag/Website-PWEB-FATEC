@@ -4000,6 +4000,10 @@ ol {
 	background-image: url('../img/produtos-geeks.gif');
 }
 
+.ht-mobile-left .logo {
+	display: none;
+}
+
 /* Medium Device: 1200px */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -4123,8 +4127,14 @@ ol {
 	.inner-header .advanced-search .input-group {
 		max-width: 60%;
 	}
+	.inner-header .logo {
+		width: auto;
+	}
 	.inner-header .nav-right li {
 		margin-left: 8px;
+	}
+	.inner-header .advanced-search .input-group {
+		max-width: 100%;
 	}
 	.nav-item .nav-depart .depart-btn {
 		padding: 14px 40px 14px 18px;
@@ -4234,6 +4244,17 @@ ol {
 	}
 	.inner-header .advanced-search .input-group button {
 		right: 0;
+	}
+	.container-mobile {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 0;
+	}
+	.ht-mobile-left .logo {
+		width: 100px;
+		height: 100%;
+		display: block;
 	}
 	.slicknav_menu {
 		display: block;
