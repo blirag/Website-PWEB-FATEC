@@ -162,9 +162,9 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
+                        <li><a href="./index.html">Home</a></li>
                         <li><a href="./produtos.html">Produtos</a></li>
-                        <li><a href="./contato.html">Contato</a></li>
+                        <li class="active"><a href="./contato.html">Contato</a></li>
                         <li><a href="./sobre-nos.html">Sobre nós</a>
                     </ul>
                 </nav>
@@ -253,14 +253,16 @@
                             <form action="#" class="comment-form">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="Seu nome">
+                                        <input type="text" placeholder="Seu nome" id="user">
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="Seu e-mail">
+                                        <input type="text" placeholder="Seu e-mail" id="email">
                                     </div>
                                     <div class="col-lg-12">
-                                        <textarea placeholder="Sua mensagem"></textarea>
-                                        <button type="submit" class="site-btn">Enviar mensagem</button>
+                                        <textarea placeholder="Sua mensagem" id="msg"></textarea>
+                                        <div class="alert-message"></div>
+                                        <input style="color: white" type="button" class="site-btn"
+                                            value="Enviar mensagem" onclick="formValidator()">
                                     </div>
                                 </div>
                             </form>
@@ -387,6 +389,31 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        const formValidator = () => {
+            const div = document.querySelector('.alert-message')
+
+            const validRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            console.log(user.value)
+            console.log(email.value)
+            console.log(msg.value)
+            if (user.value.length === 0 || msg.value.length === 0) {
+                div.innerHTML = `<div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Campo vazio!</strong> Por favor, preencha todos os campos.
+              </div>`
+            } else {
+                div.innerHTML = ''
+            }
+
+            if (!email.value.match(validRegex)) {
+                div.innerHTML = `<div class="alert alert-danger alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>E-mail Inválido!</strong> Por favor, digite um e-mail válido.
+  </div>`
+            }
+        }
+    </script>
 </body>
 
 </html>
