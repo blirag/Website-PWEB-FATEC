@@ -1,3 +1,8 @@
+<?php 
+    include_once '../db/connection.php';
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,7 +11,7 @@
     <meta name="description" content="Essa é a Loja | Produtos Geeks">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Funkos - Essa é a Loja | Produtos Geeks</title>
+    <title>Star Wars | Produtos Geeks</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -153,11 +158,11 @@
                         <i class="ti-menu"></i>
                         <span>Todos as Categorias</span>
                         <ul class="depart-hover">
-                            <li><a href="./produtos/camisetas.html">Camisetas</a></li>
-                            <li><a href="./produtos/funkos.html">Funkos</a></li>
-                            <li><a href="./produtos/shorts.html">Shorts</a></li>
-                            <li><a href="./produtos/chaveiros.html">Chaveiros</a></li>
-                            <li><a href="./produtos/mousepads.html">Mousepads</a></li>
+                            <li><a href="./camisetas.html">Camisetas</a></li>
+                            <li><a href="./funkos.html">Funkos</a></li>
+                            <li><a href="./shorts.html">Shorts</a></li>
+                            <li><a href="./chaveiros.html">Chaveiros</a></li>
+                            <li><a href="./mousepads.html">Mousepads</a></li>
                         </ul>
                     </div>
                 </div>
@@ -181,9 +186,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <a href="../index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="../produtos.html">Produtos</a>
-                        <span>Funkos</span>
+                        <a href="../index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="../produtos.php">Produtos</a>
+                        <span><?php echo $_GET['nome'] ?></span>
                     </div>
                 </div>
             </div>
@@ -198,52 +203,44 @@
                 <div class="col-lg-12 order-1 order-lg-2">
                     <div class="product-list">
                         <div class="row">
-                            <div class="col-lg-4 col-sm-6">
+                            <?php
+                                if(isset($_GET['nome'])):
+                                    $themeName = mysqli_escape_string($connect, $_GET['nome']);
+                                
+                                    $sql = "SELECT * FROM produtos WHERE theme = '$themeName'";
+                                    $result = mysqli_query($connect, $sql);
+                                    
+                                    if(mysqli_num_rows($result) > 0):
+                                        while($data = mysqli_fetch_array($result)):
+                            ?>
+                                <div class="col-lg-4 col-sm-6">
                                 <div class="product-item">
                                     <div class="pi-pic">
-                                        <img src="../img/funkos/hermione.jpg" alt="">
+                                    <?php echo '<img src="../img/'.$data['img'].'" class="img-fluid" alt="'.$data['name'].'">'; ?>
                                         <div class="icon">
                                             <i class="icon_heart_alt"></i>
                                         </div>
                                         <ul>
-                                            <li class="quick-view w-icon active"><a
-                                                    href="./detalhes/funko-hermione.html">+ Ver Mais</a></li>
+                                            <li class="quick-view w-icon active"><a href="./detalhes.php?id=<?php echo $data['id']; ?>">+
+                                                    Ver Mais</a></li>
                                         </ul>
                                     </div>
                                     <div class="pi-text">
-                                        <div class="catagory-name">Funko Pop</div>
-                                        <a href="./detalhes/funko-hermione.html">
-                                            <h5>Hermione Granger</h5>
+                                        <div class="catagory-name"><?php echo $data['category'] ?></div>
+                                        <a href="./detalhes.php?id=<?php echo $data['id']; ?>">
+                                            <h5><?php echo $data['name'] ?></h5>
                                         </a>
                                         <div class="product-price">
-                                            R$118,99
+                                            R$ <?php echo $data['price'] ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product-item">
-                                    <div class="pi-pic">
-                                        <img src="../img/funkos/stormtrooper.jpg" alt="">
-                                        <div class="icon">
-                                            <i class="icon_heart_alt"></i>
-                                        </div>
-                                        <ul>
-                                            <li class="quick-view w-icon active"><a
-                                                    href="./detalhes/funko-stormtrooper.html">+ Ver Mais</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="pi-text">
-                                        <div class="catagory-name">Funko Pop</div>
-                                        <a href="./detalhes/funko-stormtrooper.html">
-                                            <h5>Stormtrooper</h5>
-                                        </a>
-                                        <div class="product-price">
-                                            R$139,99
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                                        endwhile;
+                                    endif;
+                                endif;
+                            ?>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,17 @@
+<?php 
+    include_once '../db/connection.php';
+    session_start();
+
+    
+  if(isset($_GET['id'])):
+    $id = mysqli_escape_string($connect, $_GET['id']);
+
+    $sql = "SELECT * FROM produtos WHERE id = '$id'";
+    $result = mysqli_query($connect, $sql);
+    $data = mysqli_fetch_array($result);
+  endif;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,15 +26,15 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../../css/themify-icons.css" type="text/css">
-    <link rel="stylesheet" href="../../css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="../../css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="../../css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="../../css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="../../css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 
 <body>
@@ -181,8 +195,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
-                        <a href="../../index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="../../produtos.html">Produtos</a>
+                        <a href="../../index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="../../produtos.php">Produtos</a>
                         <span>Detalhes</span>
                     </div>
                 </div>
@@ -197,14 +211,14 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <div>
-                                <img class="product-big-img" src="../../img/funkos/hermione.jpg" alt="">
+                              <?php echo '<img class="product-big-img" src="../img/'.$data['img'].'" alt="'.$data['name'].'">'; ?>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="product-details">
                                 <div class="pd-title">
-                                    <span>harry potter</span>
-                                    <h3>Hermione Granger</h3>
+                                    <span><?php echo $data['theme'] ?></span>
+                                    <h3><?php echo $data['name'] ?></h3>
                                     <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                                 </div>
                                 <div class="pd-rating">
@@ -216,15 +230,15 @@
                                     <span>(5)</span>
                                 </div>
                                 <div class="pd-desc">
-                                    <p>Funko POP Hermione Granger Harry Potter</p>
-                                    <h4>R$ 118,99</h4>
+                                    <p><?php echo $data['summary'] ?></p>
+                                    <h4>R$ <?php echo $data['price'] ?></h4>
                                 </div>
                                 <div class="pd-size-choose">
                                     <div class="sc-item">
                                         <input type="radio" id="sm-size">
-                                        <label for="sm-size">U</label>
+                                        <label for="sm-size">P</label>
                                     </div>
-                                    <!-- <div class="sc-item">
+                                    <div class="sc-item">
                                         <input type="radio" id="md-size">
                                         <label for="md-size">M</label>
                                     </div>
@@ -235,7 +249,7 @@
                                     <div class="sc-item">
                                         <input type="radio" id="xl-size">
                                         <label for="xl-size">GG</label>
-                                    </div> -->
+                                    </div>
                                 </div>
                                 <div class="quantity">
                                     <div class="pro-qty">
@@ -244,7 +258,7 @@
                                     <a href="#" class="primary-btn pd-cart">Comprar</a>
                                 </div>
                                 <div class="pd-share">
-                                    <div class="p-code">ID : 00015</div>
+                                    <div class="p-code">ID : 000<?php echo $data['id'] ?></div>
                                 </div>
                             </div>
                         </div>
@@ -269,15 +283,7 @@
                                     <div class="product-content">
                                         <div class="row">
                                             <div class="col-lg-7">
-                                                <p>Funko pop veio para enlouquecer os apaixonados por animes, filmes,
-                                                    séries de tvs e desenhos animados. São bonecos de diversos
-                                                    personagens, lindos e cabeçudinhos. Muitos deles tornam-se raro
-                                                    devido a baixa tiragem de peças. A funko já produziu mais de 3 mil
-                                                    modelos diferentes e mensalmente lançam novos personagens. não perca
-                                                    tempo, entre logo nessa onda e colecione os funko pop. </p>
-                                                <p>Material: Plástico</p>
-                                                <p>Cor: Conforme imagem</p>
-                                                <p>Tamanhos Disponíveis: 17.2 x 12.9 x 10 centímetros</p>
+                                                <p><?php echo $data['description'] ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -307,7 +313,7 @@
                                             <tr>
                                                 <td class="p-catagory">Material</td>
                                                 <td>
-                                                    <div class="cart-add">Plástico</div>
+                                                    <div class="cart-add">100% Algodão</div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -316,7 +322,7 @@
                                                     <div class="p-size">13 disponíveis</div>
                                                 </td>
                                             </tr>
-                                            <!-- <tr>
+                                            <tr>
                                                 <td class="p-catagory">Tipo de manga</td>
                                                 <td>
                                                     <div class="p-size">Curta</div>
@@ -327,7 +333,7 @@
                                                 <td>
                                                     <div class="p-size">Redonda</div>
                                                 </td>
-                                            </tr> -->
+                                            </tr>
                                         </table>
                                     </div>
                                 </div>
@@ -614,7 +620,7 @@
                             Essa é a Loja
                         </div>
                         <div class="payment-pic">
-                            <img src="../../img/payment-method.png" alt="">
+                            <img src="../img/payment-method.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -623,16 +629,16 @@
     </footer>
 
     <!-- Js Plugins -->
-    <script src="../../js/jquery-3.3.1.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/jquery-ui.min.js"></script>
-    <script src="../../js/jquery.countdown.min.js"></script>
-    <script src="../../js/jquery.nice-select.min.js"></script>
-    <script src="../../js/jquery.zoom.min.js"></script>
-    <script src="../../js/jquery.dd.min.js"></script>
-    <script src="../../js/jquery.slicknav.js"></script>
-    <script src="../../js/owl.carousel.min.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.zoom.min.js"></script>
+    <script src="../js/jquery.dd.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
