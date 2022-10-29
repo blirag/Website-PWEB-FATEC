@@ -14,13 +14,13 @@
                 </div>
                 <div class="ht-mobile-left">
                     <div class="logo">
-                        <a href="./index.html">
+                        <a href="./index.php">
                             <img class='logo' src="./img/logo.gif" alt="Essa é a Loja - Produtos Geeks" />
                         </a>
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="login.html" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <a href="login.php" class="login-panel"><i class="fa fa-user"></i>Login</a>
 
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
@@ -101,8 +101,8 @@
                                             <h5>R$185,89</h5>
                                         </div>
                                         <div class="select-button">
-                                            <a href="./carrinho.html" class="primary-btn view-card">Ver Carrinho</a>
-                                            <a href="./finalizar-compra.html" class="primary-btn checkout-btn">Finalizar
+                                            <a href="./carrinho.php" class="primary-btn view-card">Ver Carrinho</a>
+                                            <a href="./finalizar-compra.php" class="primary-btn checkout-btn">Finalizar
                                                 Compra</a>
                                         </div>
                                     </div>
@@ -121,20 +121,20 @@
                         <i class="ti-menu"></i>
                         <span>Todos as Categorias</span>
                         <ul class="depart-hover">
-                            <li><a href="./produtos/camisetas.html">Camisetas</a></li>
-                            <li><a href="./produtos/funkos.html">Funkos</a></li>
-                            <li><a href="./produtos/shorts.html">Shorts</a></li>
-                            <li><a href="./produtos/chaveiros.html">Chaveiros</a></li>
-                            <li><a href="./produtos/mousepads.html">Mousepads</a></li>
+                            <li><a href="./produtos/categoria.php?nome=Camiseta">Camisetas</a></li>
+                            <li><a href="./produtos/categoria.php?nome=Funko Pop">Funkos</a></li>
+                            <li><a href="./produtos/categoria.php?nome=Shorts">Shorts</a></li>
+                            <li><a href="./produtos/categoria.php?nome=Chaveiro">Chaveiros</a></li>
+                            <li><a href="./produtos/categoria.php?nome=Mousepad">Mousepads</a></li>
                         </ul>
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./produtos.html">Produtos</a></li>
-                        <li><a href="./contato.html">Contato</a></li>
-                        <li><a href="./sobre-nos.html">Sobre nós</a>
+                        <li><a href="./index.php">Home</a></li>
+                        <li><a href="./produtos.php">Produtos</a></li>
+                        <li><a href="./contato.php">Contato</a></li>
+                        <li><a href="./sobre-nos.php">Sobre nós</a>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>

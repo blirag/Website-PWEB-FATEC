@@ -1,21 +1,5 @@
 <?php
-require_once 'db/connection.php';
-
-if(isset($_POST['register_btn'])):
-	$nome = $_POST['username'];
-	$cpf = $_POST['cpf'];
-	$email = $_POST['email'];
-	$pass = $_POST['pass'];
-	$conpass = $_POST['conpass'];
-
-	$sql = "INSERT INTO cliente (name, cpf, email, password) VALUES ('$name', '$cpf', '$email', '$pass')";
-
-	if(mysqli_query($connect, $sql)):
-		header('Location: ../entrar.php?sucesso');
-	else:
-		header('Location: ../cadastro.php?erro-ao-cadastrar');
-	endif;
-endif;
+    require_once 'db/connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -72,33 +56,33 @@ endif;
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
                         <h2>Cadastro</h2>
-                        <form action="cadastro.php" method='POST'>
+                        <form action="./actions/register.php" method='POST'>
                             <div class="group-input">
                                 <label for="username">Nome *</label>
-                                <input type="text" id="username" required>
+                                <input type="text" id="username" name="username" required>
                             </div>
                             <div class="group-input">
                                 <label for="cpf">CPF (somente números)*</label>
-                                <input type="text" id="cpf" required>
+                                <input type="text" id="cpf" name="cpf" required>
                             </div>
                             <div class="group-input">
                                 <label for="email">E-mail *</label>
-                                <input type="text" id="email" required>
+                                <input type="text" id="email" name="email" required>
                             </div>
                             <div class="group-input">
                                 <label for="pass">Senha *</label>
-                                <input type="text" id="pass" required>
+                                <input type="text" id="pass" name="pass" required>
                             </div>
                             <div class="group-input">
                                 <label for="conpass">Confirmar Senha *</label>
-                                <input type="text" id="conpass" required>
+                                <input type="text" id="conpass" name="conpass" required>
                             </div>
                             <div class="alert-message"></div>
-                            <input type='button' value='Cadastrar' name='register_btn' class="site-btn register-btn"
-                                onclick="registerValidator()">
+                            <button type="submit" name="register_btn" class="site-btn register-btn"
+                               >Cadastrar</button>
                         </form>
                         <div class="switch-login">
-                            <a href="./login.html" class="or-login">Ou Login</a>
+                            <a href="./login.php" class="or-login">Ou Login</a>
                         </div>
                     </div>
                 </div>

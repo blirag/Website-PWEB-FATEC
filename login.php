@@ -1,3 +1,53 @@
+<?php
+require_once './db/connection.php';
+
+session_start();
+
+if(isset($_POST['login_btn'])):
+	$errors = array();
+	$email = mysqli_escape_string($connect, $_POST['email']);
+	$password = mysqli_escape_string($connect, $_POST['password']);
+
+	if(empty($email) or empty($password)):
+		$errors[] = '<div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Login Inválido!</strong> Todos os campos devem ser preenchidos.
+      </div>';
+	else:
+		$sql = "SELECT email FROM cliente WHERE email = '$email'";
+		$resultado = mysqli_query($connect, $sql);		
+
+		if(mysqli_num_rows($resultado) > 0):      
+		$sql = "SELECT * FROM cliente WHERE email = '$email' AND password = '$password'";
+
+		$resultado = mysqli_query($connect, $sql);
+
+			if(mysqli_num_rows($resultado) == 1):
+				$dados = mysqli_fetch_array($resultado);
+				mysqli_close($connect);
+				$_SESSION['isLogged'] = true;
+				$_SESSION['userId'] = $dados['id'];
+				$_SESSION['userName'] = $dados['name'];
+				header('Location: index.php');
+			else:
+				$errors[] = '<div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Login Inválido!</strong> E-mail e senha não conferem.
+              </div>';
+			endif;
+
+		else:
+			$errors[] = '<div class="alert alert-danger alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>E-mail Inválido!</strong> E-mail inexistente.
+          </div>';
+		endif;
+
+	endif;
+
+endif;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -53,27 +103,29 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="login-form">
                         <h2>Login</h2>
-                        <form action="#">
+                        <?php 
+                            if(!empty($errors)):
+                            foreach($errors as $error):
+                                echo $error;
+                            endforeach;
+                            endif;
+                        ?>
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='POST'>
                             <div class="group-input">
                                 <label for="email">E-mail *</label>
-                                <input type="text" id="email">
+                                <input type="text" id="email" name="email">
                             </div>
                             <div class="group-input">
-                                <label for="pass">Senha *</label>
-                                <input type="text" id="pass">
+                                <label for="password">Senha *</label>
+                                <input type="text" id="password" name="password">
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">
-                                    <!-- <label for="save-pass">
-                                        Save Password
-                                        <input type="checkbox" id="save-pass">
-                                        <span class="checkmark"></span>
-                                    </label> -->
                                     <a href="./redefinir-senha.html" class="forget-pass">Esqueci a senha</a>
                                 </div>
                             </div>
                             <div class="alert-message"></div>
-                            <input type="button" class="site-btn login-btn" value="Entrar" onclick="formValidator()">
+                            <button type="submit" name='login_btn' class="site-btn login-btn">Entrar</button>
                         </form>
                         <div class="switch-login">
                             <a href="./cadastro.html" class="or-login">Ou Crie uma Conta</a>

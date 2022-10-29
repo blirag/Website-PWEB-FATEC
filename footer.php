@@ -4,7 +4,7 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="./index.html"><img src="img/logo.gif" alt=""></a>
+                            <a href="./index.php"><img src="img/logo.gif" alt="Essa é a loja - produtos geeks"></a>
                         </div>
                         <ul>
                             <li>Endereço: R. Frei João, 59 - Ipiranga</li>
@@ -22,10 +22,10 @@
                     <div class="footer-widget">
                         <h5>Informações</h5>
                         <ul>
-                            <li><a href="./sobre-nos.html">Sobre nós</a></li>
-                            <li><a href="./produtos.html">Produtos</a></li>
-                            <li><a href="./contato.html">Contato</a></li>
-                            <li><a href="./faq.html">FAQ</a></li>
+                            <li><a href="./sobre-nos.php">Sobre nós</a></li>
+                            <li><a href="./produtos.php">Produtos</a></li>
+                            <li><a href="./contato.php">Contato</a></li>
+                            <li><a href="./faq.php">FAQ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -33,10 +33,10 @@
                     <div class="footer-widget">
                         <h5>Temas</h5>
                         <ul>
-                            <li><a href="./produtos/harry-potter.html">Harry Potter</a></li>
-                            <li><a href="./produtos/star-wars.html">Star Wars</a></li>
-                            <li><a href="./produtos/marvel.html">Marvel</a></li>
-                            <li><a href="./produtos/super-mario.html">Super Mario</a></li>
+                            <li><a href="./produtos/tema.php?nome=Star Wars">Star Wars</a></li>
+                            <li><a href="./produtos/tema.php?nome=Harry Potter">Harry Potter</a></li>
+                            <li><a href="./produtos/tema.php?nome=Super Mario">Super Mario</a></li>
+                            <li><a href="./produtos/tema.php?nome=Marvel">Marvel</a></li>
                         </ul>
                     </div>
                 </div>
