@@ -1,3 +1,68 @@
+<?php
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+    require './lib/vendor/autoload.php';
+
+    require_once 'db/connection.php';
+
+    if(isset($_POST['btn-forgot'])):
+        $message = array();
+        $email = mysqli_escape_string($connect, $_POST['email']);
+
+        if(!preg_match('/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/', $email)):
+            $message[] = '<div class="alert alert-danger alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>E-mail Inválido!</strong> Digite um e-mail válido.
+                        </div>';
+        else:
+            $sql = "SELECT name, password FROM cliente WHERE email = '$email'";
+            $result = mysqli_query($connect, $sql);
+            
+            if(mysqli_num_rows($result) == 1):
+                $data = mysqli_fetch_array($result);
+                mysqli_close($connect);
+
+                $mail = new PHPMailer(true);
+                $name = $data['name'];
+                $password = $data['password'];
+
+                try {
+                //Server settings
+                $mail->isSMTP();
+                $mail->Host = 'smtp.mailtrap.io';                   
+                $mail->SMTPAuth = true;
+                $mail->Port = 2525;
+                $mail->Username = 'e528f05a9c02e5';
+                $mail->Password = 'c4d15f6910670d';
+                $mail->CharSet = "UTF-8";
+
+                $mail->setFrom('produtosgeeks@essaealoja.com', 'Essa é a Loja');
+                $mail->addAddress($email, $name);     
+
+                $mail->isHTML(true);                              
+                $mail->Subject = 'Recuperação de Senha';
+                $mail->Body    = "Olá, $name </br></br> A senha da sua conta na <b>Essa é a Loja | Produtos Geeks</b> é: $password.";
+
+                $mail->send();
+                $message[] = '<div class="alert alert-success" role="alert">
+                                E-mail enviado com sucesso!
+                            </div>';
+                } catch (Exception $e) {
+                $message[] = '<div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Algo deu errado!</strong> Tente enviar novamente.
+            </div>';
+                }
+            else:
+                $message[] = '<div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Usuário inexistente!</strong> E-mail digitado não existe na nossa base de dados.
+            </div>';
+            endif;
+        endif;
+    endif;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -53,10 +118,17 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="login-form">
                         <h2>Redefinir senha</h2>
-                        <form action="#">
+                        <?php 
+                            if(!empty($message)):
+                                foreach($message as $msg):
+                                    echo $msg;
+                                endforeach;
+                            endif;
+                        ?>
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='POST'>
                             <div class="group-input">
                                 <label for="email">E-mail *</label>
-                                <input type="text" id="email">
+                                <input type="text" id="email" name='email'>
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">
@@ -65,7 +137,7 @@
                                 </div>
                             </div>
                             <div class="alert-message"></div>
-                            <input type="button" class="site-btn login-btn" onclick="emailValidator()" value="Enviar">
+                            <button class="site-btn login-btn" name='btn-forgot'>Enviar</button>
                         </form>
                     </div>
                 </div>

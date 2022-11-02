@@ -36,7 +36,7 @@
                     <div class="row align-row">
                         <div class="col-lg-3 col-md-3 logo-container">
                             <div class="logo">
-                                <a href="./index.html">
+                                <a href="./index.php">
                                     <img class='logo' src="./img/logo.gif" alt="Essa é a Loja - Produtos Geeks" />
                                 </a>
                             </div>

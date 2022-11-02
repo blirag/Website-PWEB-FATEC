@@ -255,7 +255,7 @@
                                     <div class="pro-qty">
                                         <input type="text" value="1">
                                     </div>
-                                    <a href="#" class="primary-btn pd-cart">Comprar</a>
+                                    <a href="../carrinho.php?" class="primary-btn pd-cart">Comprar</a>
                                 </div>
                                 <div class="pd-share">
                                     <div class="p-code">ID : 000<?php echo $data['id'] ?></div>

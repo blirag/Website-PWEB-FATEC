@@ -121,14 +121,14 @@ endif;
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">
-                                    <a href="./redefinir-senha.html" class="forget-pass">Esqueci a senha</a>
+                                    <a href="./redefinir-senha.php" class="forget-pass">Esqueci a senha</a>
                                 </div>
                             </div>
                             <div class="alert-message"></div>
                             <button type="submit" name='login_btn' class="site-btn login-btn">Entrar</button>
                         </form>
                         <div class="switch-login">
-                            <a href="./cadastro.html" class="or-login">Ou Crie uma Conta</a>
+                            <a href="./cadastro.php" class="or-login">Ou Crie uma Conta</a>
                         </div>
                     </div>
                 </div>

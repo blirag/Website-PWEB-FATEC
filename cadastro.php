@@ -1,5 +1,44 @@
 <?php
     require_once 'db/connection.php';
+
+    if(isset($_POST['register_btn'])):
+        $errors = array();
+        $name = $_POST['username'];
+        $cpf = $_POST['cpf'];
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+        $conpass = $_POST['conpass'];
+
+        if(empty($email) or empty($pass) or empty($conpass) or empty($cpf) or empty($name)):
+            $errors[] = '<div class="alert alert-danger alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Cadastro Inválido!</strong> Todos os campos devem ser preenchidos.
+                        </div>';
+        elseif(!preg_match('/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/', $email)):
+            $errors[] = '<div class="alert alert-danger alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>E-mail Inválido!</strong> Digite um e-mail válido.
+                        </div>';
+        elseif(strlen($pass) < 6):
+            $errors[] = '<div class="alert alert-danger alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Senha Inválida!</strong> A senha deve ter no mínimo 6 caracteres.
+                            </div>';
+        elseif(strcmp($pass, $conpass) !== 0):
+            $errors[] = '<div class="alert alert-danger alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Senha Inválida!</strong> As senhas não coincidem.
+                        </div>';
+        else:
+            $sql = "INSERT INTO cliente (name, cpf, email, password) VALUES ('$name', '$cpf', '$email', '$pass')";
+        
+            if(mysqli_query($connect, $sql)):
+            header('Location: ./login.php?sucesso');
+            else:
+            header('Location: ./cadastro.php?erro-ao-cadastrar');
+            endif;
+        endif;
+    endif;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -56,7 +95,14 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
                         <h2>Cadastro</h2>
-                        <form action="./actions/register.php" method='POST'>
+                        <?php 
+                            if(!empty($errors)):
+                            foreach($errors as $error):
+                                echo $error;
+                            endforeach;
+                            endif;
+                        ?>
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='POST'>
                             <div class="group-input">
                                 <label for="username">Nome *</label>
                                 <input type="text" id="username" name="username" required>
