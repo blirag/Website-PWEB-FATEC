@@ -87,7 +87,7 @@ endif;
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <a href="index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="index.php"><i class="fa fa-home"></i> Home</a>
                         <span>Login</span>
                     </div>
                 </div>

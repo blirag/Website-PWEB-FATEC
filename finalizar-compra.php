@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    include_once './db/connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -37,8 +42,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./carrinho.html">Carrinho</a>
+                        <a href="./index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="./carrinho.php">Carrinho</a>
                         <span>Finalizar Compra</span>
                     </div>
                 </div>
@@ -79,25 +84,32 @@
                             <div class="order-total">
                                 <ul class="order-table">
                                     <li>Produto <span>Total</span></li>
-                                    <li class="fw-normal">Funko Pop - Hermione Granger x 1 <span>R$118,99</span>
+                                    <?php
+                                        $sessionId = session_id();
+                                        $sql = "SELECT c.*, p.name, p.category, p.img
+                                        FROM carrinho c INNER JOIN produtos p ON c.productId = p.id WHERE c.sessionId = '$sessionId'";
+                                        $result = mysqli_query($connect, $sql);
+                                        $quantity = 0;
+                                        $total = 0;
+
+                                        if(mysqli_num_rows($result) > 0):
+                                            while($content = mysqli_fetch_array($result)):
+                                                $quantity = $quantity + $content['quantity'];
+                                                $total = ($total + $content['totalPrice']);
+                                    ?>
+                                    <li class="fw-normal"><?php echo $content['category']; ?> - <?php echo $content['name']; ?> x <?php echo $content['quantity']; ?> <span>R$ <?php echo $content['quantity'] * $content['unitPrice']; ?></span>
                                     </li>
-                                    <li class="fw-normal">Camiseta Darth Vader - Star Wars x 1 <span>R$39,90</span>
-                                    </li>
-                                    <li class="fw-normal">Subtotal <span>r$158,89</span></li>
-                                    <li class="total-price">Total <span>r$158,89</span></li>
+                                    <?php 
+		                                endwhile;
+                                            endif;
+                                    ?>
+                                    <li class="total-price">Total <span>R$ <?php echo $total; ?></span></li>
                                 </ul>
                                 <div class="payment-check">
                                     <div class="pc-item">
                                         <label for="pc-check">
                                             Cartão de Crédito
                                             <input type="checkbox" id="pc-check">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                    <div class="pc-item">
-                                        <label for="pc-paypal">
-                                            Pix
-                                            <input type="radio" id="pc-paypal">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>

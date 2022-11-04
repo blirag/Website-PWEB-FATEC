@@ -32,6 +32,19 @@
 
     <?php include_once('./header.php') ?>
 
+    <div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <a href="index.php"><i class="fa fa-home"></i> Home</a>
+                        <span>Sobre nós</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="blog-details spad">
         <div class="container">
             <div class="row">

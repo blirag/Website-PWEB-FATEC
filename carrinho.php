@@ -1,3 +1,19 @@
+<?php 
+    session_start();
+    include_once './db/connection.php';
+
+    if(isset($_POST['btn-clear'])):
+    $sessionId = session_id();
+        $sql = "DELETE FROM carrinho WHERE sessionId = '$sessionId'";
+
+        if(mysqli_query($connect, $sql)):
+            header('Location: ./carrinho.php?vazio');
+        else:
+            header('Location: ./carrinho.php?erro-ao-limpar');
+        endif;
+    endif;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -37,8 +53,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
-                        <a href="./home.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./produtos.html">Produtos</a>
+                        <a href="./home.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="./produtos.php">Produtos</a>
                         <span>Carrinho</span>
                     </div>
                 </div>
@@ -61,49 +77,48 @@
                                     <th>Preço</th>
                                     <th>Quantidade</th>
                                     <th>Total</th>
-                                    <th><i class="ti-close"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                    $sessionId = session_id();
+                                    $sql = "SELECT c.*, p.name, p.category, p.img
+                                    FROM carrinho c INNER JOIN produtos p ON c.productId = p.id WHERE c.sessionId = '$sessionId'";
+                                    $result = mysqli_query($connect, $sql);
+                                    $quantity = 0;
+                                    $total = 0;
+
+                                    if(mysqli_num_rows($result) > 0):
+                                        while($content = mysqli_fetch_array($result)):
+                                            $quantity = $quantity + $content['quantity'];
+                                            $total = ($total + $content['totalPrice']);
+                                ?>
                                 <tr>
-                                    <td class="cart-pic first-row"><img src="img/funkos/hermione.jpg" alt=""></td>
+                                    <td class="cart-pic first-row"><?php echo '<img src="./img/'.$content['img'].'" alt="'.$content['name'].'">'; ?></td>
                                     <td class="cart-title first-row">
-                                        <h5>Funko Pop - Hermione Granger</h5>
+                                        <h5><?php echo $content['category']; ?> - <?php echo $content['name']; ?></h5>
                                     </td>
-                                    <td class="p-price first-row">R$118,99</td>
+                                    <td class="p-price first-row">R$ <?php echo $content['unitPrice']; ?></td>
                                     <td class="qua-col first-row">
                                         <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
+                                            <?php echo $content['quantity']; ?>
                                         </div>
                                     </td>
-                                    <td class="total-price first-row">R$118,99</td>
-                                    <td class="close-td first-row"><i class="ti-close"></i></td>
+                                    <td class="total-price first-row">R$ <?php echo $content['quantity'] * $content['unitPrice']; ?></td>
                                 </tr>
-                                <tr>
-                                    <td class="cart-pic"><img src="img/camisetas/starwars-vader-preta.jpg" alt=""></td>
-                                    <td class="cart-title">
-                                        <h5>Camiseta Darth Vader - Star Wars</h5>
-                                    </td>
-                                    <td class="p-price">R$39,90</td>
-                                    <td class="qua-col">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="total-price">R$39,90</td>
-                                    <td class="close-td"><i class="ti-close"></i></td>
-                                </tr>
+                                <?php 
+		                            endwhile;
+                                        endif;
+                                ?>
                             </tbody>
                         </table>
                     </div>
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="cart-buttons">
-                                <a href="./produtos.html" class="primary-btn continue-shop">Continuar comprando</a>
+                                <form method='POST'>
+                                    <button type='submit' class="primary-btn continue-shop" name='btn-clear'>Limpar carrinho</button>
+                                </form>
                             </div>
                             <div class="discount-coupon">
                                 <h6>Frete grátis acima de R$ 99</h6>
@@ -112,10 +127,9 @@
                         <div class="col-lg-4 offset-lg-4">
                             <div class="proceed-checkout">
                                 <ul>
-                                    <li class="subtotal">Subtotal <span>R$158,89</span></li>
-                                    <li class="cart-total">Total <span>R$158,89</span></li>
+                                    <li class="cart-total">Total <span>R$ <?php echo $total; ?></span></li>
                                 </ul>
-                                <a href="./finalizar-compra.html" class="proceed-btn">Finalizar Compra</a>
+                                <a href="./finalizar-compra.php" class="proceed-btn">Finalizar Compra</a>
                             </div>
                         </div>
                     </div>

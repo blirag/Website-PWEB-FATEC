@@ -1,15 +1,32 @@
 <?php 
     include_once '../db/connection.php';
     session_start();
-
     
-  if(isset($_GET['id'])):
-    $id = mysqli_escape_string($connect, $_GET['id']);
+    if(isset($_GET['id'])):
+        $id = mysqli_escape_string($connect, $_GET['id']);
+        $sql = "SELECT * FROM produtos WHERE id = '$id'";
+        $result = mysqli_query($connect, $sql);
+        $data = mysqli_fetch_array($result);
+    endif;
 
-    $sql = "SELECT * FROM produtos WHERE id = '$id'";
-    $result = mysqli_query($connect, $sql);
-    $data = mysqli_fetch_array($result);
-  endif;
+    if(isset($_POST['btn-buy'])):
+        $product = $data['id'];
+        $quantity = $_POST['quantity'];
+        $unitPrice = $data['price'];
+        $sessionId = session_id();
+        $client = $_SESSION['userId'];
+        $totalPrice = $data['price'] * $quantity;
+
+        $sql = "INSERT INTO carrinho (sessionId, productId, clientId, quantity, unitPrice, totalPrice) VALUES ('$sessionId', '$product', '$client', '$quantity', '$unitPrice', '$totalPrice')";
+
+        echo $data['id'];
+
+        if(mysqli_query($connect, $sql)):
+            header('Location: ../carrinho.php');
+        else:
+            header('Location: ./detalhes.php?id='.$data['id'].'?erro-ao-adicionar');
+        endif;
+    endif;
 ?>
 
 <!DOCTYPE html>
@@ -233,30 +250,14 @@
                                     <p><?php echo $data['summary'] ?></p>
                                     <h4>R$ <?php echo $data['price'] ?></h4>
                                 </div>
-                                <div class="pd-size-choose">
-                                    <div class="sc-item">
-                                        <input type="radio" id="sm-size">
-                                        <label for="sm-size">P</label>
+                                <form method='POST'> 
+                                    <div class="quantity">
+                                        <div class="pro-qty">
+                                            <input type="text" value="1" name='quantity'>
+                                        </div>
+                                        <button type='submit' class="primary-btn pd-cart" name='btn-buy'>Comprar</button>
                                     </div>
-                                    <div class="sc-item">
-                                        <input type="radio" id="md-size">
-                                        <label for="md-size">M</label>
-                                    </div>
-                                    <div class="sc-item">
-                                        <input type="radio" id="lg-size">
-                                        <label for="lg-size">G</label>
-                                    </div>
-                                    <div class="sc-item">
-                                        <input type="radio" id="xl-size">
-                                        <label for="xl-size">GG</label>
-                                    </div>
-                                </div>
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
-                                    </div>
-                                    <a href="../carrinho.php?" class="primary-btn pd-cart">Comprar</a>
-                                </div>
+                                </form>
                                 <div class="pd-share">
                                     <div class="p-code">ID : 000<?php echo $data['id'] ?></div>
                                 </div>
