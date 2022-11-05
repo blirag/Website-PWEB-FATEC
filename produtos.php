@@ -1,6 +1,5 @@
 <?php 
     include_once './db/connection.php';
-    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -94,13 +93,13 @@
                                                 <i class="icon_heart_alt"></i>
                                             </div>
                                             <ul>
-                                                <li class="quick-view w-icon active"><a href="./detalhes.php?id=<?php echo $data['id']; ?>">+
+                                                <li class="quick-view w-icon active"><a href="./produtos/detalhes.php?id=<?php echo $data['id']; ?>">+
                                                         Ver Mais</a></li>
                                             </ul>
                                         </div>
                                         <div class="pi-text">
                                             <div class="catagory-name"><?php echo $data['category'] ?></div>
-                                            <a href="./detalhes.php?id=<?php echo $data['id']; ?>">
+                                            <a href="./produtos/detalhes.php?id=<?php echo $data['id']; ?>">
                                                 <h5><?php echo $data['name'] ?></h5>
                                             </a>
                                             <div class="product-price">

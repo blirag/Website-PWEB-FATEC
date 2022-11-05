@@ -1,8 +1,6 @@
 <?php
 require_once './db/connection.php';
 
-session_start();
-
 if(isset($_POST['login_btn'])):
 	$errors = array();
 	$email = mysqli_escape_string($connect, $_POST['email']);

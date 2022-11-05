@@ -1,6 +1,16 @@
 <?php 
-    session_start();
     include_once './db/connection.php';
+
+    if(isset($_POST['finalize'])):
+        $sessionId = session_id();
+            $sql = "DELETE FROM carrinho WHERE sessionId = '$sessionId'";
+    
+        if(mysqli_query($connect, $sql)):
+            header('Location: ./index.php?compra-efetuada');
+        else:
+            header('Location: ./finalizar-compra.php?erro-ao-finalizar');
+        endif;
+    endif;
 ?>
 
 <!DOCTYPE html>
@@ -115,7 +125,9 @@
                                     </div>
                                 </div>
                                 <div class="order-btn">
-                                    <button type="submit" class="site-btn place-btn">Finalizar</button>
+                                    <form method='POST'>
+                                        <button type="submit" class="site-btn place-btn" name='finalize'>Finalizar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

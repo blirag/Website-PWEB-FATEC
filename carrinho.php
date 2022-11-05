@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     include_once './db/connection.php';
 
     if(isset($_POST['btn-clear'])):

@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    include_once './db/connection.php';
+?>
+
 <!-- Header Section Begin -->
 <header class="header-section">
         <div class="header-top">
@@ -20,7 +25,22 @@
                     </div>
                 </div>
                 <div class="ht-right">
+                    <?php
+                        if(!isset($_SESSION['isLogged'])):
+                    ?>
                     <a href="login.php" class="login-panel"><i class="fa fa-user"></i>Login</a>
+
+                    <?php
+                        else:
+                        $nome = $_SESSION['userName'];
+                    ?>
+                        <span>
+                            <span class='login-panel'><?php echo $nome; ?></span> | <button style="border: 0; background: none;">sair</button>
+                        </span>
+                        
+                    <?php
+                        endif;
+                    ?>
 
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
@@ -60,45 +80,60 @@
                                 <li class="cart-icon">
                                     <a href="#">
                                         <i class="icon_bag_alt"></i>
-                                        <span>3</span>
+                                        <?php
+                                                    $sessionId = session_id();
+                                                    $sql = "SELECT c.*, p.name, p.category, p.img
+                                                    FROM carrinho c INNER JOIN produtos p ON c.productId = p.id WHERE c.sessionId = '$sessionId'";
+                                                    $result = mysqli_query($connect, $sql);
+
+                                                    if(mysqli_num_rows($result) > 0):
+                                                        $items = 0;
+                                                        while($content = mysqli_fetch_array($result)):
+                                                        $items++;
+                                                        echo '<span>'.$items.'</span>';                 
+                                                        
+                                                        endwhile;                                     endif;   
+                                        ?>
                                     </a>
                                     <div class="cart-hover">
                                         <div class="select-items">
                                             <table>
                                                 <tbody>
+                                                <?php
+                                                    $sessionId = session_id();
+                                                    $sql = "SELECT c.*, p.name, p.category, p.img
+                                                    FROM carrinho c INNER JOIN produtos p ON c.productId = p.id WHERE c.sessionId = '$sessionId'";
+                                                    $result = mysqli_query($connect, $sql);
+                                                    $quantity = 0;
+                                                    $total = 0;
+
+                                                    if(mysqli_num_rows($result) > 0):
+                                                        while($content = mysqli_fetch_array($result)):
+                                                            $quantity = $quantity + $content['quantity'];
+                                                            $total = ($total + $content['totalPrice']);
+                                                ?>
                                                     <tr>
-                                                        <td class="si-pic"><img src="img/funkos/hermione.jpg"
-                                                                alt="funko pop hermione granger"></td>
+                                                        <td class="si-pic"><?php echo '<img src="./img/'.$content['img'].'" alt="'.$content['name'].'">'; ?></td>
                                                         <td class="si-text">
                                                             <div class="product-selected">
-                                                                <p>R$118,99 x 1</p>
-                                                                <h6>Funko Pop - Hermione Granger</h6>
+                                                                <p>R$ <?php echo $content['quantity'] * $content['unitPrice']; ?> x <?php echo $content['quantity']; ?></p>
+                                                                <h6><?php echo $content['category']; ?> - <?php echo $content['name']; ?></h6>
                                                             </div>
                                                         </td>
                                                         <td class="si-close">
                                                             <i class="ti-close"></i>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td class="si-pic"><img
-                                                                src="img/camisetas/starwars-vader-preta.jpg" alt="">
-                                                        </td>
-                                                        <td class="si-text">
-                                                            <div class="product-selected">
-                                                                <p>R$39,90 x 1</p>
-                                                                <h6>Camiseta Darth Vader</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td class="si-close">
-                                                            <i class="ti-close"></i>
-                                                        </td>
-                                                    </tr>
+                                                <?php 
+                                                    endwhile;
+                                                        endif;
+                                                ?>
                                                 </tbody>
                                             </table>
                                         </div>
                                         <div class="select-total">
                                             <span>total:</span>
-                                            <h5>R$185,89</h5>
+                                            <h5>R$ <?php echo $total; ?></h5>
                                         </div>
                                         <div class="select-button">
                                             <a href="./carrinho.php" class="primary-btn view-card">Ver Carrinho</a>
@@ -107,7 +142,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="cart-price">R$158,89</li>
+                                <li class="cart-price">R$ <?php echo $total; ?></li>
                             </ul>
                         </div>
                     </div>

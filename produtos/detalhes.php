@@ -1,6 +1,5 @@
 <?php 
     include_once '../db/connection.php';
-    session_start();
     
     if(isset($_GET['id'])):
         $id = mysqli_escape_string($connect, $_GET['id']);
