@@ -1,5 +1,7 @@
 <?php 
     include_once './db/connection.php';
+    session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +48,7 @@
                             <h1>Promoção</h1>
                             <p>Todos os produtos Marvel com descontos de até 50% e frete grátis acima de R$ 99.
                             </p>
-                            <a href="./produtos/marvel.php" class="primary-btn"> Comprar agora</a>
+                            <a href="./produtos/tema.php?nome=Marvel" class="primary-btn"> Comprar agora</a>
                         </div>
                     </div>
                     <div class="off-card">
@@ -61,7 +63,7 @@
                             <span>Super Mario</span>
                             <h1>Compre e Ganhe!</h1>
                             <p>Na compra de qualquer item da categoria Super Mario ganhe um chaveiro de brinde.</p>
-                            <a href="./produtos/super-mario.php" class="primary-btn">Comprar agora</a>
+                            <a href="./produtos/tema.php?nome=Super Mario" class="primary-btn">Comprar agora</a>
                         </div>
                     </div>
                     <div class="off-card">

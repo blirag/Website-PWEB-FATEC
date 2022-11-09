@@ -5,6 +5,8 @@
     require './lib/vendor/autoload.php';
 
     require_once 'db/connection.php';
+    session_start();
+
 
     if(isset($_POST['btn-forgot'])):
         $message = array();

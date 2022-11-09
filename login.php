@@ -1,5 +1,6 @@
 <?php
 require_once './db/connection.php';
+session_start();
 
 if(isset($_POST['login_btn'])):
 	$errors = array();
@@ -115,7 +116,7 @@ endif;
                             </div>
                             <div class="group-input">
                                 <label for="password">Senha *</label>
-                                <input type="text" id="password" name="password">
+                                <input type="password" id="password" name="password">
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">

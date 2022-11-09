@@ -9,21 +9,25 @@
     endif;
 
     if(isset($_POST['btn-buy'])):
-        $product = $data['id'];
-        $quantity = $_POST['quantity'];
-        $unitPrice = $data['price'];
-        $sessionId = session_id();
-        $client = $_SESSION['userId'];
-        $totalPrice = $data['price'] * $quantity;
+        if(!isset($_SESSION['isLogged'])):
+            header('Location: ../login.php');
+        else: 
+            $product = $data['id'];
+            $quantity = $_POST['quantity'];
+            $unitPrice = $data['price'];
+            $sessionId = session_id();
+            $client = $_SESSION['userId'];
+            $totalPrice = $data['price'] * $quantity;
 
-        $sql = "INSERT INTO carrinho (sessionId, productId, clientId, quantity, unitPrice, totalPrice) VALUES ('$sessionId', '$product', '$client', '$quantity', '$unitPrice', '$totalPrice')";
+            $sql = "INSERT INTO carrinho (sessionId, productId, clientId, quantity, unitPrice, totalPrice) VALUES ('$sessionId', '$product', '$client', '$quantity', '$unitPrice', '$totalPrice')";
 
-        echo $data['id'];
+            echo $data['id'];
 
-        if(mysqli_query($connect, $sql)):
-            header('Location: ../carrinho.php');
-        else:
-            header('Location: ./detalhes.php?id='.$data['id'].'?erro-ao-adicionar');
+            if(mysqli_query($connect, $sql)):
+                header('Location: ../carrinho.php');
+            else:
+                header('Location: ./detalhes.php?id='.$data['id'].'?erro-ao-adicionar');
+            endif;
         endif;
     endif;
 ?>
@@ -59,152 +63,7 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="header-top">
-            <div class="container container-mobile">
-                <div class="ht-left">
-                    <div class="mail-service">
-                        <i class=" fa fa-envelope"></i>
-                        produtosgeeks@essaealoja.com
-                    </div>
-                    <div class="phone-service">
-                        <i class=" fa fa-phone"></i>
-                        +55 (11) 99063-7422
-                    </div>
-                </div>
-                <div class="ht-mobile-left">
-                    <div class="logo">
-                        <a href="../../index.html">
-                            <img class='logo' src="../../img/logo.gif" alt="Essa é a Loja - Produtos Geeks" />
-                        </a>
-                    </div>
-                </div>
-                <div class="ht-right">
-                    <a href="../../login.html" class="login-panel"><i class="fa fa-user"></i>Login</a>
-
-                    <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-header">
-            <div class="container">
-                <div class="inner-header">
-                    <div class="row align-row">
-                        <div class="col-lg-3 col-md-3 logo-container">
-                            <div class="logo">
-                                <a href="../../index.html">
-                                    <img class='logo' src="../../img/logo.gif" alt="Essa é a Loja - Produtos Geeks" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 advanced-search-container">
-                            <div class="advanced-search">
-                                <div class="input-group">
-                                    <input type="text" placeholder="O que você precisa?">
-                                    <button type="button"><i class="ti-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 text-right col-md-3 nav-right-container">
-                            <ul class="nav-right">
-                                <li class="heart-icon">
-                                    <a href="#">
-                                        <i class="icon_heart_alt"></i>
-                                        <span>1</span>
-                                    </a>
-                                </li>
-                                <li class="cart-icon">
-                                    <a href="#">
-                                        <i class="icon_bag_alt"></i>
-                                        <span>3</span>
-                                    </a>
-                                    <div class="cart-hover">
-                                        <div class="select-items">
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="si-pic"><img src="../../img/funkos/hermione.jpg"
-                                                                alt="funko pop hermione granger"></td>
-                                                        <td class="si-text">
-                                                            <div class="product-selected">
-                                                                <p>R$118,99 x 1</p>
-                                                                <h6>Funko Pop - Hermione Granger</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td class="si-close">
-                                                            <i class="ti-close"></i>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="si-pic"><img
-                                                                src="../../img/camisetas/starwars-vader-preta.jpg"
-                                                                alt="">
-                                                        </td>
-                                                        <td class="si-text">
-                                                            <div class="product-selected">
-                                                                <p>R$39,90 x 1</p>
-                                                                <h6>Camiseta Darth Vader</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td class="si-close">
-                                                            <i class="ti-close"></i>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="select-total">
-                                            <span>total:</span>
-                                            <h5>R$185,89</h5>
-                                        </div>
-                                        <div class="select-button">
-                                            <a href="../../carrinho.html" class="primary-btn view-card">Ver Carrinho</a>
-                                            <a href="../../finalizar-compra.html"
-                                                class="primary-btn checkout-btn">Finalizar
-                                                Compra</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="cart-price">R$158,89</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="nav-item">
-            <div class="container">
-                <div class="nav-depart">
-                    <div class="depart-btn">
-                        <i class="ti-menu"></i>
-                        <span>Todos as Categorias</span>
-                        <ul class="depart-hover">
-                            <li><a href="../produtos/camisetas.html">Camisetas</a></li>
-                            <li><a href="../produtos/funkos.html">Funkos</a></li>
-                            <li><a href="../produtos/shorts.html">Shorts</a></li>
-                            <li><a href="../produtos/chaveiros.html">Chaveiros</a></li>
-                            <li><a href="../produtos/mousepads.html">Mousepads</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <nav class="nav-menu mobile-menu">
-                    <ul>
-                        <li class="active"><a href="../../index.html">Home</a></li>
-                        <li><a href="../../produtos.html">Produtos</a></li>
-                        <li><a href="../../contato.html">Contato</a></li>
-                        <li><a href="../../sobre-nos.html">Sobre nós</a>
-                    </ul>
-                </nav>
-                <div id="mobile-menu-wrap"></div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
+    <?php include_once('./header.php'); ?>
 
     <div class="breacrumb-section">
         <div class="container">

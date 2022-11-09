@@ -1,5 +1,7 @@
 <?php 
     include_once './db/connection.php';
+    session_start();
+
 
     if(isset($_POST['btn-clear'])):
     $sessionId = session_id();
