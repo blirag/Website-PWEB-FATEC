@@ -1,5 +1,6 @@
 <?php 
     include_once '../db/connection.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>

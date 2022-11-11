@@ -3,9 +3,9 @@
     session_start();
 
 
-    if(isset($_POST['finalize'])):
+    if(isset($_POST['btn-finish'])):
         $sessionId = session_id();
-            $sql = "DELETE FROM carrinho WHERE sessionId = '$sessionId'";
+        $sql = "DELETE FROM carrinho WHERE sessionId = '$sessionId'";
     
         if(mysqli_query($connect, $sql)):
             header('Location: ./index.php?compra-efetuada');
@@ -67,26 +67,26 @@
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
         <div class="container">
-            <form action="#" class="checkout-form">
+            <form method="POST" class="checkout-form">
                 <div class="row">
                     <div class="col-lg-6">
                         <h4>Endereço para Entrega</h4>
                         <div class="row">
                             <div class="col-lg-12">
                                 <label for="zip">CEP</label>
-                                <input type="text" id="zip">
+                                <input type="text" id="zip" required>
                             </div>
                             <div class="col-lg-12">
                                 <label for="street">Endereço<span>*</span></label>
-                                <input type="text" id="street" class="street-first">
+                                <input type="text" id="street" class="street-first" required>
                             </div>
                             <div class="col-lg-12">
                                 <label for="town">Cidade<span>*</span></label>
-                                <input type="text" id="town">
+                                <input type="text" id="town" required>
                             </div>
                             <div class="col-lg-6">
                                 <label for="email">Estado<span>*</span></label>
-                                <input type="text" id="email">
+                                <input type="text" id="email" required>
                             </div>
                         </div>
                     </div>
@@ -117,19 +117,20 @@
                                     ?>
                                     <li class="total-price">Total <span>R$ <?php echo $total; ?></span></li>
                                 </ul>
+                                
                                 <div class="payment-check">
                                     <div class="pc-item">
                                         <label for="pc-check">
                                             Cartão de Crédito
-                                            <input type="checkbox" id="pc-check">
+                                            <input type="checkbox" id="pc-check" name="check-card">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="order-btn">
-                                    <form method='POST'>
-                                        <button type="submit" class="site-btn place-btn" name='finalize'>Finalizar</button>
-                                    </form>
+                                    
+                                        <button type="submit" class="site-btn place-btn" name="btn-finish">Finalizar</button>
+                                    
                                 </div>
                             </div>
                         </div>

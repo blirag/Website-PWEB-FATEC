@@ -120,7 +120,7 @@
                 <div class="col-lg-3">
                     <div class="product-large set-bg" data-setbg="img/hp-vertical.jpg">
                         <h2>Harry Potter</h2>
-                        <a href="./produtos/harry-potter.php">Veja Mais</a>
+                        <a href="./produtos/tema.php?nome=Harry Potter">Veja Mais</a>
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-1">
@@ -215,7 +215,7 @@
                 <div class="col-lg-3 offset-lg-1">
                     <div class="product-large set-bg m-large" data-setbg="img/starwars-vertical.webp">
                         <h2>Star Wars</h2>
-                        <a href="./produtos/star-wars.php">Veja Mais</a>
+                        <a href="./produtos/tema.php?nome=Star Wars">Veja Mais</a>
                     </div>
                 </div>
             </div>

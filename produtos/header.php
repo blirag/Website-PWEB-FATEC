@@ -1,11 +1,10 @@
 <?php 
-    session_start();
     include_once '../db/connection.php';
 
     if(isset($_GET['search-btn'])):
         $term =  $_GET['term'];
         $_SESSION['termo'] = $term;
-        header('Location: resultado-busca.php');
+        header('Location: ../resultado-busca.php');
     endif;
 ?>
 
