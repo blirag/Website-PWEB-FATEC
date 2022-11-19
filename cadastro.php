@@ -119,11 +119,11 @@
                             </div>
                             <div class="group-input">
                                 <label for="pass">Senha *</label>
-                                <input type="text" id="pass" name="pass" required>
+                                <input type="password" id="pass" name="pass" required>
                             </div>
                             <div class="group-input">
                                 <label for="conpass">Confirmar Senha *</label>
-                                <input type="text" id="conpass" name="conpass" required>
+                                <input type="password" id="conpass" name="conpass" required>
                             </div>
                             <div class="alert-message"></div>
                             <button type="submit" name="register_btn" class="site-btn register-btn"

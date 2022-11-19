@@ -97,17 +97,21 @@
                                         <i class="icon_bag_alt"></i>
                                         <?php
                                                     $sessionId = session_id();
-                                                    $sql = "SELECT c.*, p.name, p.category, p.img
-                                                    FROM carrinho c INNER JOIN produtos p ON c.productId = p.id WHERE c.sessionId = '$sessionId'";
-                                                    $result = mysqli_query($connect, $sql);
+                                                    if (empty($session)):
+                                                        echo '';
+                                                    else:                                                
+                                                        $sql = "SELECT c.*, p.name, p.category, p.img
+                                                        FROM carrinho c INNER JOIN produtos p ON c.productId = p.id WHERE c.sessionId = '$sessionId'";
+                                                        $result = mysqli_query($connect, $sql);
 
-                                                    if(mysqli_num_rows($result) > 0):
-                                                        $items = 0;
-                                                        while($content = mysqli_fetch_array($result)):
-                                                        $items++;
-                                                        echo '<span>'.$items.'</span>';                 
-                                                        
-                                                        endwhile;                                     endif;   
+                                                        if(mysqli_num_rows($result) > 0):
+                                                            $items = 0;
+                                                            while($content = mysqli_fetch_array($result)):
+                                                            $items++;
+                                                            echo '<span>'.$items.'</span>';                 
+                                                            
+                                                            endwhile;                                     endif; 
+                                                        endif;  
                                         ?>
                                     </a>
                                     <div class="cart-hover">
